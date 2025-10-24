@@ -14,7 +14,7 @@ MainWindow::MainWindow(QWidget *parent)
     // 初始化计算器
     resetCalculator();
 
-    // 只连接数字按钮 (0-9) - 这些按钮没有自动连接
+
     connect(ui->BN0, &QPushButton::clicked, this, &MainWindow::BNclicked);
     connect(ui->BN1, &QPushButton::clicked, this, &MainWindow::BNclicked);
     connect(ui->BN2, &QPushButton::clicked, this, &MainWindow::BNclicked);
@@ -26,8 +26,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->BN8, &QPushButton::clicked, this, &MainWindow::BNclicked);
     connect(ui->BN9, &QPushButton::clicked, this, &MainWindow::BNclicked);
 
-    // 注意：其他所有按钮都通过自动连接（命名规范：on_对象名_clicked）
-    // 不要手动连接它们，否则会导致重复调用
+
 }
 
 MainWindow::~MainWindow()
@@ -46,7 +45,7 @@ void MainWindow::resetCalculator()
     ui->KUANG->setText(operand);
 }
 
-// 辅助函数：移除末尾不必要的零
+
 QString MainWindow::removeTrailingZeros(const QString &str)
 {
     QString result = str;
@@ -71,7 +70,7 @@ void MainWindow::BNclicked()
 
     QString digit = button->text();
 
-    // 如果刚刚执行了计算，重新开始输入
+
     if (calculationPerformed) {
         operand = "0";
         calculationPerformed = false;
@@ -132,7 +131,6 @@ void MainWindow::on_GUIling_clicked()
     resetCalculator();
 }
 
-// 运算符按钮的槽函数 - 替换原来的CHUcun函数
 void MainWindow::on_JIA_clicked()
 {
     if (!pendingOperator.isEmpty() && !waitForNewOperand) {
@@ -249,7 +247,7 @@ void MainWindow::on_BAIFEN_clicked()
     operand = removeTrailingZeros(operand);
     ui->KUANG->setText(operand);
 
-    // 重置状态
+
     pendingOperator = "";
     calculationPerformed = true;
     waitForNewOperand = true;
@@ -263,7 +261,7 @@ void MainWindow::on_PF_clicked()
     operand = removeTrailingZeros(operand);
     ui->KUANG->setText(operand);
 
-    // 重置状态
+
     pendingOperator = "";
     calculationPerformed = true;
     waitForNewOperand = true;
@@ -277,12 +275,12 @@ void MainWindow::on_GENGHAO_clicked()
         resetCalculator();
         return;
     }
-    value = sqrt(value);  // 平方根计算
+    value = sqrt(value);
     operand = QString::number(value, 'g', 10);
     operand = removeTrailingZeros(operand);
     ui->KUANG->setText(operand);
 
-    // 重置状态
+
     pendingOperator = "";
     calculationPerformed = true;
     waitForNewOperand = true;
@@ -301,7 +299,7 @@ void MainWindow::on_DAOSU_clicked()
     operand = removeTrailingZeros(operand);
     ui->KUANG->setText(operand);
 
-    // 重置状态
+
     pendingOperator = "";
     calculationPerformed = true;
     waitForNewOperand = true;

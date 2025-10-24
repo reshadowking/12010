@@ -22,21 +22,21 @@ private slots:
     // 数字按钮 - 需要手动连接
     void BNclicked();
 
-    // 以下按钮通过自动连接（命名规范：on_对象名_clicked）
-    void on_dain_clicked();        // 小数点
-    void on_DEL_clicked();         // 删除
-    void on_GUIling_clicked();     // 清空(C)
-    void on_JIA_clicked();        // 加号(+)
-    void on_JIAN_clicked();        // 减号(-)
-    void on_CHEN_clicked();        // 乘号(×)
-    void on_CHU_clicked();         // 除号(÷)
-    void on_DY_clicked();          // 等号(=)
-    void on_ZF_clicked();          // 正负号(±)
-    void on_BAIFEN_clicked();      // 百分比(%)
-    void on_PF_clicked();          // 平方(x²)
-    void on_GENGHAO_clicked();     // 平方根(√)
-    void on_DAOSU_clicked();       // 倒数(1/x)
-    void on_QINchu_clicked();      // CE清除
+
+    void on_dain_clicked();
+    void on_DEL_clicked();
+    void on_GUIling_clicked();
+    void on_JIA_clicked();
+    void on_JIAN_clicked();
+    void on_CHEN_clicked();
+    void on_CHU_clicked();
+    void on_DY_clicked();
+    void on_ZF_clicked();
+    void on_BAIFEN_clicked();
+    void on_PF_clicked();
+    void on_GENGHAO_clicked();
+    void on_DAOSU_clicked();
+    void on_QINchu_clicked();
 
 private:
     Ui::MainWindow *ui;
