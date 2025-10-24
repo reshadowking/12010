@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QStack>
+#include <QKeyEvent>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,24 +20,18 @@ public:
     ~MainWindow();
 
 private slots:
-    // 数字按钮 - 需要手动连接
-    void BNclicked();
-
-
-    void on_dain_clicked();
-    void on_DEL_clicked();
-    void on_GUIling_clicked();
-    void on_JIA_clicked();
-    void on_JIAN_clicked();
-    void on_CHEN_clicked();
-    void on_CHU_clicked();
-    void on_DY_clicked();
-    void on_ZF_clicked();
-    void on_BAIFEN_clicked();
-    void on_PF_clicked();
-    void on_GENGHAO_clicked();
-    void on_DAOSU_clicked();
-    void on_QINchu_clicked();
+    void BNclicked();  // 数字按钮点击
+    void on_dain_clicked();  // 小数点
+    void on_DEL_clicked();  // 删除
+    void on_GUIling_clicked();  // 清空
+    void CHUcun();  // 运算符点击
+    void on_DY_clicked();  // 等号
+    void on_ZF_clicked();  // 正负号
+    void on_BAIFEN_clicked();  // 百分比
+    void on_PF_clicked();  // 平方
+    void on_GENGHAO_clicked();  // 平方根
+    void on_DAOSU_clicked();  // 倒数
+    void on_QINchu_clicked();  // 清除
 
 private:
     Ui::MainWindow *ui;
@@ -49,6 +44,9 @@ private:
     void resetCalculator();
     void performCalculation();
     QString removeTrailingZeros(const QString &str);
+
+protected:
+    void keyPressEvent(QKeyEvent *event) override;  // 键盘
 };
 
 #endif // MAINWINDOW_H
