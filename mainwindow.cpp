@@ -36,16 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->CHEN, &QPushButton::clicked, this, &MainWindow::CHUcun);
     connect(ui->CHU, &QPushButton::clicked, this, &MainWindow::CHUcun);
 
-    // 连接等号按钮
-    connect(ui->DY, &QPushButton::clicked, this, &MainWindow::on_DY_clicked);
 
-    // 连接其他功能按钮
-    connect(ui->ZF, &QPushButton::clicked, this, &MainWindow::on_ZF_clicked);
-    connect(ui->BAIFEN, &QPushButton::clicked, this, &MainWindow::on_BAIFEN_clicked);
-    connect(ui->PF, &QPushButton::clicked, this, &MainWindow::on_PF_clicked);
-    connect(ui->GENGHAO, &QPushButton::clicked, this, &MainWindow::on_GENGHAO_clicked);
-    connect(ui->DAOSU, &QPushButton::clicked, this, &MainWindow::on_DAOSU_clicked);
-    connect(ui->QINchu, &QPushButton::clicked, this, &MainWindow::on_QINchu_clicked);
 }
 
 MainWindow::~MainWindow()
